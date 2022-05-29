@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="666.0" prefWidth="1240.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Reservation.ReservationController">
+   <children>
+      <AnchorPane prefHeight="100.0" prefWidth="1240.0" style="-fx-background-color: #0033cc;">
+         <children>
+            <ImageView fitHeight="70.0" layoutX="190.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../res/Train.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="620.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Train Booking">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Text>
+            <Button fx:id="close" layoutX="1209.0" layoutY="4.0" mnemonicParsing="false" onAction="#closeOnAction" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fitHeight="150.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../res/close.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </AnchorPane>
+      <TableView fx:id="TrainTableView" layoutX="390.0" layoutY="138.0" prefHeight="500.0" prefWidth="850.0">
+        <columns>
+          <TableColumn fx:id="SerialNoColumn" prefWidth="43.0" text="SNo" />
+          <TableColumn fx:id="PNRColumn" prefWidth="109.0" text="pnr_id" />
+            <TableColumn fx:id="SourceColumn" prefWidth="91.0" text="source" />
+            <TableColumn fx:id="DestinationColumn" prefWidth="110.0" text="destination" />
+            <TableColumn fx:id="TrainNameColumn" prefWidth="294.0" text="train_name" />
+            <TableColumn fx:id="DepartureTimeColumn" prefWidth="105.0" text="departure_time" />
+            <TableColumn fx:id="SeatsColumn" prefWidth="97.0" text="seats_available" />
+        </columns>
+      </TableView>
+      <TextField fx:id="SearchTF" layoutX="910.0" layoutY="105.0" prefHeight="25.0" prefWidth="317.0" promptText="Keywords" />
+      <TextField fx:id="PNRConfirm" layoutX="170.0" layoutY="220.0" prefWidth="210.0" promptText="PNR" />
+      <TextField fx:id="PassengerConfirm" layoutX="170.0" layoutY="280.0" prefWidth="210.0" promptText="Passengers" />
+      <Button fx:id="BillingButton" alignment="CENTER" contentDisplay="CENTER" layoutX="142.0" layoutY="579.0" mnemonicParsing="false" onAction="#reservationButtonOnAction" style="-fx-background-color: #0033cc;" text="Proceed to Pay" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="AddTrainOption" alignment="CENTER" contentDisplay="CENTER" layoutX="1068.0" layoutY="638.0" mnemonicParsing="false" onAction="#AdminFeature" style="-fx-background-color: #0033cc;" text="Click here to add more Trains" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label fx:id="WelcomeLabel" alignment="CENTER" contentDisplay="CENTER" layoutY="100.0" prefHeight="30.0" prefWidth="380.0" text="Welcome" textFill="#0033cc">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Text fill="#0033cc" layoutX="815.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search Trains:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text fill="#0033cc" layoutX="50.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter PNR:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text fill="#0033cc" layoutX="27.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="People Travelling:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text fill="#0033cc" layoutX="24.0" layoutY="478.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm Password:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <PasswordField fx:id="PasswordConfirm" layoutX="170.0" layoutY="460.0" prefWidth="210.0" promptText="Password" />
+      <Text fill="#0033cc" layoutX="975.0" layoutY="654.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin Feature = " />
+      <TextField fx:id="FNameConfirm" layoutX="170.0" layoutY="340.0" prefWidth="210.0" promptText="First Name" />
+      <TextField fx:id="LNameConfirm" layoutX="170.0" layoutY="400.0" prefWidth="210.0" promptText="Last Name" />
+      <Text fill="#0033cc" layoutX="48.0" layoutY="358.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text fill="#0033cc" layoutX="48.0" layoutY="418.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Label fx:id="AlertLabel" alignment="CENTER" contentDisplay="CENTER" layoutY="526.0" prefHeight="17.0" prefWidth="390.0" textFill="#ff1c1c" />
+      <Button fx:id="ResfreshButton" alignment="CENTER" layoutX="483.0" layoutY="98.0" mnemonicParsing="false" prefHeight="7.0" prefWidth="31.0" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fx:id="RefreshTable" fitHeight="37.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../res/reload.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Text fill="#0033cc" layoutX="390.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Refresh Table:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
