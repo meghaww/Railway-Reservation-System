@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="440.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AdminUsage.TrainEdit.AddEditTrainsController">
+    <children>
+        <AnchorPane prefHeight="80.0" prefWidth="500.0" style="-fx-background-color: #0033cc;">
+            <children>
+                <ImageView fitHeight="57.0" fitWidth="58.0" layoutX="33.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../res/Train.png" />
+                    </image>
+                </ImageView>
+                <Label layoutX="154.0" layoutY="23.0" text="Add Or Edit Trains" textFill="WHITE">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Label>
+                <Button fx:id="close" layoutX="469.0" layoutY="11.0" mnemonicParsing="false" onAction="#closeOnAction" prefHeight="10.0" prefWidth="10.0" style="-fx-background-color: transparent;">
+                    <graphic>
+                        <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../res/close.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+            </children>
+        </AnchorPane>
+        <Label layoutX="85.0" layoutY="149.0" text="Source" textFill="#0033cc">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </Label>
+        <TextField fx:id="SourceTF" layoutX="85.0" layoutY="168.0" prefHeight="25.0" prefWidth="330.0" promptText="Source" />
+        <Label layoutX="86.0" layoutY="199.0" text="Destination" textFill="#0033cc">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </Label>
+        <TextField fx:id="DestinationTF" layoutX="85.0" layoutY="218.0" prefHeight="25.0" prefWidth="330.0" promptText="Destination" />
+        <Label layoutX="85.0" layoutY="249.0" text="Train Name" textFill="#0033cc">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </Label>
+        <TextField fx:id="TrainNameTF" layoutX="85.0" layoutY="268.0" prefHeight="25.0" prefWidth="330.0" promptText="Train Name" />
+        <Label layoutX="85.0" layoutY="299.0" text="Departure Time" textFill="#0033cc">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </Label>
+        <TextField fx:id="DepartureTimeTF" layoutX="85.0" layoutY="318.0" prefHeight="25.0" prefWidth="330.0" promptText="Departure Time" />
+        <Label layoutX="85.0" layoutY="349.0" text="Seats Available" textFill="#0033cc">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </Label>
+        <Button fx:id="Confirm" layoutX="85.0" layoutY="403.0" mnemonicParsing="false" onAction="#save" prefHeight="25.0" prefWidth="330.0" style="-fx-background-color: #0033cc;" text="Confirm" textFill="WHITE">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <Label fx:id="AlertLabel" alignment="CENTER" contentDisplay="CENTER" layoutY="80.0" prefHeight="25.0" prefWidth="500.0" textFill="#0f9700" />
+      <Label layoutX="85.0" layoutY="105.0" text="PNR ID" textFill="#0033cc">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="PNRTF" layoutX="85.0" layoutY="124.0" prefHeight="25.0" prefWidth="330.0" promptText="PNR" />
+      <TextField fx:id="SeatsAvailableTF" layoutX="85.0" layoutY="368.0" prefHeight="25.0" prefWidth="330.0" promptText="Seats Available" />
+    </children>
+</AnchorPane>
